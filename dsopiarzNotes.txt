@@ -1,0 +1,8 @@
+Useful git commands:
+
+git reset : This will unstage all files staged with git add
+git checkout : This will revert all local uncommited changes (use in repo root)
+git checkout [some_dir/file.txt] : Reverts only particular file/dir
+git reset --hard HEAD : Reverts all uncommited changes regardless of subdir in
+git clean -fdx : Remove all local untracked files, only git tracked files remain
+
