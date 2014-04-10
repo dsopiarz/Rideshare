@@ -3,12 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Departlocation</th>
-      <th>Arrivelocation</th>
-      <th>Departtime</th>
-      <th>Arrivetime</th>
-      <th>Seatsavailable</th>
-      <th>Costperseat</th>
+      <th>Departure Location</th>
+      <th>Arrival Location</th>
+      <th>Departure Time</th>
+      <th>Arrival Time</th>
+      <th>Seats Available</th>
+      <th>Cost per Seat</th>
       <th>Preferences</th>
       <th></th>
       <th></th>
@@ -21,8 +21,8 @@
       <tr>
         <td><%= ride.departlocation %></td>
         <td><%= ride.arrivelocation %></td>
-        <td><%= ride.departtime %></td>
-        <td><%= ride.arrivetime %></td>
+        <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+        <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
         <td><%= ride.seatsavailable %></td>
         <td><%= ride.costperseat %></td>
         <td><%= ride.preferences %></td>
