@@ -28,6 +28,21 @@ class RidesControllerTest < ActionController::TestCase
     get :show, id: @ride
     assert_response :success
   end
+  
+    test "should show ride" do
+    get :show, arrivelocation: @ride
+    assert_response :success
+  end
+  
+    test "should show ride" do
+    get :show, arrivetime: @ride
+    assert_response :success
+  end
+  
+    test "should show ride" do
+    get :show, departtime: @ride
+    assert_response :success
+  end
 
   test "should get edit" do
     get :edit, id: @ride
