@@ -4,7 +4,7 @@ class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def index
-    @rides = Ride.all
+	@rides = Ride.where('arrivelocation LIKE ? AND departtime LIKE ? AND arrivetime Like ?', params[:arrivelocation], params[:departtime], params[:arrivetime])
   end
 
   # GET /rides/1
