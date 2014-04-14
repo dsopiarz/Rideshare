@@ -2,7 +2,20 @@
 <br/>
 
 <div>
-  <p>search form goes here</p>
+  <%= form_for @rides, "/index", :method => "get" do %>
+  
+    <div><%= label_tag(:arrivelocation, "Destination:") %>
+    <%= text_field_tag(:ride, :arrivelocation) %></div>
+  
+    <div><%= label_tag(:departtime, "Departure Time:") %>
+    <%= text_field_tag(:ride, :departtime) %></div>
+ 
+    <div><%= label_tag(:arrivetime , "Arrival Time:") %>
+    <%= text_field_tag(:ride, :arrivetime) %></div>
+ 
+    <div><%= submit_tag("Search", :name => nil) %></div>
+	
+  <% end %>
 </div><br/><br/>
 
 <h2> Rides matching your destination and dates </h2>
