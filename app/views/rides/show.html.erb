@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departlocation:</strong>
+  <%= @ride.departlocation %>
+</p>
+
+<p>
+  <strong>Arrivelocation:</strong>
+  <%= @ride.arrivelocation %>
+</p>
+
+<p>
+  <strong>Departtime:</strong>
+  <%= @ride.departtime %>
+</p>
+
+<p>
+  <strong>Arrivetime:</strong>
+  <%= @ride.arrivetime %>
+</p>
+
+<p>
+  <strong>Seatsavailable:</strong>
+  <%= @ride.seatsavailable %>
+</p>
+
+<p>
+  <strong>Costperseat:</strong>
+  <%= @ride.costperseat %>
+</p>
+
+<p>
+  <strong>Preferences:</strong>
+  <%= @ride.preferences %>
+</p>
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>
