@@ -20,7 +20,7 @@
   <tbody>
     <% @rides.each do |ride| %>
       <tr>
-        <td><%= image_tag("nick_cage.jpg", :alt => "Picture of Driver") %></td>
+        <td><%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %></td>
         <td><%= ride.departlocation %></td>
         <td><%= ride.arrivelocation %></td>
         <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
