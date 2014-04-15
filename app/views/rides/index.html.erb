@@ -2,16 +2,16 @@
 <br/>
 
 <div>
-  <%= form_for @rides, "/index", :method => "get" do %>
+  <%= form_tag root_path, :method => "get" do %>
   
     <div><%= label_tag(:arrivelocation, "Destination:") %>
-    <%= text_field_tag(:ride, :arrivelocation) %></div>
+    <%= text_field_tag(:arrivelocation, params[:arrivelocation]) %></div>
   
     <div><%= label_tag(:departtime, "Departure Time:") %>
-    <%= text_field_tag(:ride, :departtime) %></div>
+    <%= text_field_tag(:departtime, params[:departtime]) %></div>
  
     <div><%= label_tag(:arrivetime , "Arrival Time:") %>
-    <%= text_field_tag(:ride, :arrivetime) %></div>
+    <%= text_field_tag(:arrivetime, params[:arrivetime]) %></div>
  
     <div><%= submit_tag("Search", :name => nil) %></div>
 	
