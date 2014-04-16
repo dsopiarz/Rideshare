@@ -39,7 +39,7 @@
 
 <p>
   <strong>Link to this Ride?</strong>
-   <a href="#"><%= "http://#{request.host}:#{request.port.to_s+request.fullpath}" %></a>
+   <a href="<%= "http://#{request.host}:#{request.port.to_s+request.fullpath}" %>">Click Here</a>
 </p>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
