@@ -37,5 +37,10 @@
   <%= @ride.preferences %>
 </p>
 
+<p>
+  <strong>Link to this Ride?</strong>
+   <a href="#"><%= "http://#{request.host}:#{request.port.to_s+request.fullpath}" %></a>
+</p>
+
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
 <%= link_to 'Back', rides_path %>
