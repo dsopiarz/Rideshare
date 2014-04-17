@@ -1,6 +1,7 @@
 Rideshare::Application.routes.draw do
   resources :rides
   
+   get "/results", :to => "rides#results", :as => "results"
   get "/new", :to => "rides#new", :as => "new"
   root :to => "rides#index"
 
