@@ -6,7 +6,7 @@ class RidesController < ApplicationController
   def index
     # @rides = Ride.where('arrivelocation LIKE ? AND departtime LIKE ? AND arrivetime Like ?', params[:arrivelocation], params[:departtime], params[:arrivetime])
     # @rides = Ride.where('arrivelocation LIKE ?', params[:arrivelocation])
-    @rides = Ride.search(params[:arrivelocation])
+    @rides = Ride.search(params)
   end
 
   # GET /rides/1

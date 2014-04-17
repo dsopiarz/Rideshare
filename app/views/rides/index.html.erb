@@ -3,7 +3,9 @@
 
 <%= form_tag rides_path, :method => 'get' do %>
   <%= label_tag(:arrivelocation, "Arrival Location:") %>
-  <%= text_field_tag :arrivelocation, params[:arrivelocation] %>
+  <%= text_field_tag :arrivelocation, params[:arrivelocation] %><br>
+  <%= label_tag(:departlocation, "Departure Location:") %>
+  <%= text_field_tag :departlocation, params[:departlocation] %><br>
   <%= submit_tag("Search") %>
 <% end %>
 
