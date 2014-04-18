@@ -1,4 +1,5 @@
 Rideshare::Application.routes.draw do
+  devise_for :users
   resources :rides
 
   root :controller => "rides", :action => "index"
