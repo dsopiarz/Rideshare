@@ -3,8 +3,8 @@ class RidesController < ApplicationController
 
   # GET /rides
   # GET /rides.json
-  def index
-    @rides = Ride.all
+  def results
+    @rides = Ride.search(params)
   end
 
   # GET /rides/1
