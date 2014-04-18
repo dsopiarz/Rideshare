@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div clas="navigation">
+    <%=link_to "Home", root_url %> 
+	<%=link_to "Post New Ride", new_url %> 
+  </div>
 
 <%= yield %>
 

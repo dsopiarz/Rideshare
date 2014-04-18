@@ -1,41 +1,51 @@
-<h1>Listing rides</h1>
+<h1>Search for a Ride</h1>
+<br/>
 
-<table>
-  <thead>
-    <tr>
-      <th>Picture of Driver</th>
-      <th>Departure Location</th>
-      <th>Arrival Location</th>
-      <th>Departure Time</th>
-      <th>Arrival Time</th>
-      <th>Seats Available</th>
-      <th>Cost per Seat</th>
-      <th>Preferences</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= form_tag rides_path, :method => 'get' do %>
+  <%= label_tag(:arrivelocation, "Arrival Location:") %>
+  <%= text_field_tag :arrivelocation, params[:arrivelocation] %><br>
+  <%= label_tag(:departlocation, "Departure Location:") %>
+  <%= text_field_tag :departlocation, params[:departlocation] %><br>
+  <%= submit_tag("Search") %>
+<% end %>
 
-  <tbody>
-    <% @rides.each do |ride| %>
+<br/><br/>
+
+<h2> Rides matching your destination and dates </h2>
+<br/>
+<div>
+  <table>
+    <thead>
       <tr>
-        <td><%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %></td>
-        <td><%= ride.departlocation %></td>
-        <td><%= ride.arrivelocation %></td>
-        <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
-        <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
-        <td><%= ride.seatsavailable %></td>
-        <td><%= ride.costperseat %></td>
-        <td><%= ride.preferences %></td>
-        <td><%= link_to 'Show', ride %></td>
-        <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
-        <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Picture of Driver</th>
+        <th>Departure Location</th>
+        <th>Arrival Location</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Seats Available</th>
+        <th>Cost per Seat</th>
+        <th>Preferences</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Ride', new_ride_path %>
+    <tbody>
+      <% @rides.each do |ride| %>
+        <tr>
+          <td><%= ride.departlocation %></td>
+          <td><%= ride.arrivelocation %></td>
+          <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+          <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+          <td><%= ride.seatsavailable %></td>
+          <td><%= ride.costperseat %></td>
+          <td><%= ride.preferences %></td>
+          <td><%= link_to 'Show', ride %></td>
+          <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
+          <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
