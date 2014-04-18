@@ -1,5 +1,5 @@
 class RidesController < ApplicationController
-  before_action :authenticate_user!, :except => [:show] 
+  before_action :authenticate_user! 
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
 
   # GET /rides
