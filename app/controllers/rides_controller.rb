@@ -1,10 +1,11 @@
 class RidesController < ApplicationController
+  before_action :authenticate_user! 
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
 
   # GET /rides
   # GET /rides.json
-  def index
-    @rides = Ride.all
+  def results
+    @rides = Ride.search(params)
   end
 
   # GET /rides/1
