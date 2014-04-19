@@ -3,18 +3,20 @@
 
 <div>
   <%= form_tag results_path, :method => "get" do %>
-  
-    <div>&nbsp;&nbsp;<%= label_tag(:departlocation, "Departure Location:") %>
-    <%= text_field_tag(:departlocation, params[:departlocation]) %></div>
-	
-	<div><%= label_tag(:arrivelocation, "Destination Location:") %>
-    <%= text_field_tag(:arrivelocation, params[:arrivelocation]) %></div>
-	
-	<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= label_tag(:departtime, "Departing On:") %>
-    <%= text_field_tag(:departtime, params[:departtime]) %></div><br/>
- 
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= submit_tag("Search", :name => nil) %></div>
-	
+    <div>
+      <%= label_tag(:departlocation, "Departure Location:") %>
+      <%= text_field_tag(:departlocation, params[:departlocation]) %>
+    </div>
+  	<div>
+      <%= label_tag(:arrivelocation, "Destination Location:") %>
+      <%= text_field_tag(:arrivelocation, params[:arrivelocation]) %>
+    </div>
+  	<div>
+      <%= label_tag(:departtime, "Departing On:") %>
+      <%= text_field_tag(:departtime, params[:departtime]) %>
+    </div><br>
+    <div>
+      <%= submit_tag("Search", :name => nil) %>
+    </div>
   <% end %>
 </div>
