@@ -1,6 +1,7 @@
 class RidesController < ApplicationController
-  before_action :authenticate_user! 
+  before_filter :authenticate_user!, :except => [:show, :index, :results]
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
+
 
   # GET /rides
   # GET /rides.json
