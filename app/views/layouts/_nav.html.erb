@@ -1,0 +1,6 @@
+<nav>
+  <%=link_to "Home", root_url %>
+  <% if user_signed_in? %>
+    <%=link_to " | Post New Ride", new_url %>
+  <% end %>
+</nav>
