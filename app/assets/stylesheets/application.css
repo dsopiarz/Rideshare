@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+.wrapper {
+	max-width: 1024px;
+  margin: 0 auto;
+}
+
+.frmSearch {
+  max-width: 250px;
+}
