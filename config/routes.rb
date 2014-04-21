@@ -2,7 +2,7 @@ Rideshare::Application.routes.draw do
   devise_for :users
   resources :rides
   
-   get "/results", :to => "rides#results", :as => "results"
+  get "/results", :to => "rides#results", :as => "results"
   get "/new", :to => "rides#new", :as => "new"
   root :to => "rides#index"
 
