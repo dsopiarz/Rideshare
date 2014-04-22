@@ -1,4 +1,7 @@
 class Ride < ActiveRecord::Base
+
+  validates_presence_of :departlocation, :arrivelocation, :departtime, :arrivetime, :seatsavailable, :costperseat
+  
   def self.search(params)
     if params[:departlocation].present? || params[:arrivelocation].present? || params[:departtime].present?
     query = ""
