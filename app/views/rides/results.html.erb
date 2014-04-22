@@ -36,8 +36,8 @@
           <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
           <td><%= ride.seatsavailable %></td>
           <td><%= ride.costperseat %></td>
-          <td><%= ride.smoking %></td>
-          <td><%= ride.children %></td>
+          <td><%= ride.checked(ride.smoking) %></td>
+          <td><%= ride.checked(ride.children) %></td>
           <td><%= ride.preferences %></td>
           <td><%= link_to 'Show', ride %></td>
         <% end %>
