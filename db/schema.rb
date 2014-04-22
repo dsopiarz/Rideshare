@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422034426) do
+ActiveRecord::Schema.define(version: 20140422002057) do
 
   create_table "rides", force: true do |t|
     t.string   "departlocation"
