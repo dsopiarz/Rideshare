@@ -8,11 +8,11 @@
       <% if user_signed_in? %>
         <th>Picture of Driver</th>
       <% end %>
-      <th>Departure Location</th>
-      <th>Arrival Location</th>
-      <% if user_signed_in? %>
+        <th>Departure Location</th>
+        <th>Arrival Location</th>
         <th>Departure Time</th>
         <th>Arrival Time</th>
+      <% if user_signed_in? %>
         <th>Seats Available</th>
         <th>Cost per Seat</th>
         <th>Smoking</th>
@@ -31,16 +31,16 @@
         <% end %>
           <td><%= ride.departlocation %></td>
           <td><%= ride.arrivelocation %></td>
-        <% if user_signed_in? %>
           <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
           <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+        <% if user_signed_in? %>
           <td><%= ride.seatsavailable %></td>
           <td><%= ride.costperseat %></td>
           <td><%= ride.checked(ride.smoking) %></td>
           <td><%= ride.checked(ride.children) %></td>
           <td><%= ride.preferences %></td>
-          <td><%= link_to 'Show', ride %></td>
         <% end %>
+          <td><%= link_to 'Show', ride %></td>
       </tr>
     <% end %>
   </tbody>
