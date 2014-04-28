@@ -1,4 +1,4 @@
-Class UsersController < ApplicationController
+class UsersController < ApplicationController
   before_action :set_user, only: [:destroy]
    
    
@@ -26,4 +26,5 @@ Class UsersController < ApplicationController
     def user_params
 	  params.require(:user).permit(:email)
 	end
+end
     
