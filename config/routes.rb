@@ -1,6 +1,10 @@
 Rideshare::Application.routes.draw do
   devise_for :users
   resources :rides
+  resources :users
+  
+  get "/user_search", :to => "users#user_search", :as => "user_search"
+  get "/users_results", :to => "users#users_results", :as => "users_results"
   
   get "/results", :to => "rides#results", :as => "results"
   get "/new", :to => "rides#new", :as => "new"
