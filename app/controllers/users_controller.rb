@@ -3,8 +3,17 @@ Class UsersController < ApplicationController
    
    
   #get users
-  def results
+  def user_results
     @users = User.search(params)
+  end
+  
+  # DELETE /users/1
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to user_search_url }
+      format.json { head :no_content }
+    end
   end
    
   private
