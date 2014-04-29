@@ -13,7 +13,8 @@
 
 <script>
 	$(function() {
-  $('.datepicker').datepicker();
+  $("#datepicker").datepicker();
+  $("#arrivedatepicker").datepicker();
 });
 </script>
   <div class="field">
@@ -24,13 +25,13 @@
     <%= f.label :arrivelocation %><br>
     <%= f.text_field :arrivelocation %>
   </div>
-  <div class="field datepicker">
+  <div class="field">
    <%= f.label :departtime %><br>
-   <%= f.text_field :departtime %>
+   <%= f.text_field :departtime, :id=>"datepicker" %>
   </div>
-  <div class="field datepicker">
+  <div class="field">
     <%= f.label :arrivetime %><br>
-    <%= f.text_field :arrivetime %>
+    <%= f.text_field :arrivetime, :id=>"arrivedatepicker" %>
   </div>
   <div class="field">
     <%= f.label :seatsavailable %><br>
