@@ -46,4 +46,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'zebra-datepicker-rails'
+gem 'jquery-ui-rails'

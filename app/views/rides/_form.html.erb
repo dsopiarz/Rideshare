@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+<script>
+	$(function() {
+  $('.datepicker').datepicker();
+});
+</script>
   <div class="field">
     <%= f.label :departlocation %><br>
     <%= f.text_field :departlocation %>
@@ -19,13 +24,13 @@
     <%= f.label :arrivelocation %><br>
     <%= f.text_field :arrivelocation %>
   </div>
-  <div class="field">
-    <%= f.label :departtime %><br>
-    <%= f.datetime_select :departtime %>
+  <div class="field datepicker">
+   <%= f.label :departtime %><br>
+   <%= f.text_field :departtime %>
   </div>
-  <div class="field">
+  <div class="field datepicker">
     <%= f.label :arrivetime %><br>
-    <%= f.datetime_select :arrivetime %>
+    <%= f.text_field :arrivetime %>
   </div>
   <div class="field">
     <%= f.label :seatsavailable %><br>
@@ -42,4 +47,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
