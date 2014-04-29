@@ -7,9 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="container">
     <header class="row">
-      <section class="columns">
+      <section class="user-info">
         <span>
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
@@ -23,7 +23,7 @@
       </section>
       <%= render 'layouts/nav' %>      
     </header><!-- /header -->
-    <div class="row columns">
+    <div class="row">
       <%= yield %>
     </div>
 

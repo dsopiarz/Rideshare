@@ -31,15 +31,19 @@ input[type="submit"] {
 /***********
   HEADER
 ***********/
+header.row {
+  margin-bottom: 20px;
+}
 
 #navigation {
+  background-color: rgba(0,0,0,0.25);
   font-size: 18px;
   line-height: 40px;
   min-height: 40px;
 }
 
 #navigation span {
-  display: block;
+  display: inline-block;
   text-transform: uppercase;
 }
 
@@ -47,6 +51,11 @@ input[type="submit"] {
   display: inline-block;
   height: 100%;
   padding: 0px 10px;
+}
+
+.user-info {
+  padding: 5px 0;
+  border-bottom: 1px solid #666;
 }
 
 /***********
