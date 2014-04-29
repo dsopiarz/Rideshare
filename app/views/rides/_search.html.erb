@@ -1,21 +1,14 @@
-<div class="frmSearch">
+<section class="medium-5 large-4 column">
   <h1>Search for a Ride</h1>
 
   <%= form_tag results_path, :method => "get" do %>
-    <div>
-      <%= label_tag(:departlocation, "Departure Location:") %>
-      <%= text_field_tag(:departlocation, params[:departlocation]) %>
-    </div>
-  	<div>
-      <%= label_tag(:arrivelocation, "Destination Location:") %>
-      <%= text_field_tag(:arrivelocation, params[:arrivelocation]) %>
-    </div>
-  	<div>
-      <%= label_tag(:departtime, "Departing On:") %>
-      <%= text_field_tag(:departtime, params[:departtime]) %>
-    </div><br>
-    <div>
-      <%= submit_tag("Search", :name => nil) %>
-    </div>
+    <%= label_tag(:departlocation, "Departure Location:") %>
+    <%= text_field_tag(:departlocation, params[:departlocation]) %>
+    <%= label_tag(:arrivelocation, "Destination Location:") %>
+    <%= text_field_tag(:arrivelocation, params[:arrivelocation]) %>
+    <%= label_tag(:departtime, "Departing On:") %>
+    <%= text_field_tag(:departtime, params[:departtime]) %>
+    <%= submit_tag("Search", :name => nil) %>
   <% end %>
-</div>
+
+</section>
