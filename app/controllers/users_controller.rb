@@ -3,7 +3,7 @@ class UsersController < ApplicationController
    
    
   #get users
-  def user_results
+  def users_results
     @users = User.search(params)
   end
   
