@@ -12,10 +12,23 @@
   <% end %>
 
 <script>
+
 	$(function() {
-  $("#datepicker").datepicker();
+  
   $("#arrivedatepicker").datepicker();
+  //$("#datetimepicker").datetimepicker();
+  jQuery('#datetimepicker').datetimepicker()
+	.datetimepicker({value:'2015/04/15 05:03',step:10});
 });
+/*
+
+
+
+$('#datetimepicker_mask').datetimepicker({
+	mask:'9999/19/39 29:59'
+});
+
+*/
 </script>
   <div class="field">
     <%= f.label :departlocation %><br>
@@ -25,9 +38,9 @@
     <%= f.label :arrivelocation %><br>
     <%= f.text_field :arrivelocation %>
   </div>
-  <div class="field">
+  <div class="field datetimepicker">
    <%= f.label :departtime %><br>
-   <%= f.text_field :departtime, :id=>"datepicker" %>
+   <%= f.text_field :departtime, :id=>"datetimepicker" %>
   </div>
   <div class="field">
     <%= f.label :arrivetime %><br>

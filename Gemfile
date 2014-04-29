@@ -47,3 +47,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'jquery-ui-rails'
+
+gem 'jquery-timepicker-rails'
