@@ -21,11 +21,24 @@
   max-width: 1024px;
 }
 
+form label {
+    padding: 4px 8px;
+}
+
 input[type="submit"] {
   border-radius: 5px;
   font-size: 16px;
   height: 30px;
   width: 100px;
+}
+
+.field_with_errors > label {
+    background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+}
+
+.field_with_errors {
+  background: #fff !important;
 }
 
 /***********

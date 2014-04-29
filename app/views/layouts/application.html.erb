@@ -21,14 +21,17 @@
           <% end %>
         </span>
       </section>
+      
+      <p class="notice"><%= notice %></p> 
+      <p class="alert"><%= alert %></p>
+
       <%= render 'layouts/nav' %>      
     </header><!-- /header -->
+
     <div class="row">
       <%= yield %>
     </div>
 
   </div>
-  <p class="notice"><%= notice %></p> 
-  <p class="alert"><%= alert %></p>
 </body>
 </html>
