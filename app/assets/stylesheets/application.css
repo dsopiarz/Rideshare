@@ -13,10 +13,28 @@
  */
 
 .wrapper {
-	max-width: 1024px;
   margin: 0 auto;
+  max-width: 1024px;
 }
 
 .frmSearch {
   max-width: 250px;
+}
+
+#navigation {
+  font-size: 20px;
+  line-height: 40px;
+  min-height: 40px;
+  padding: 5px;
+}
+
+#navigation span {
+  display: block;
+  text-transform: uppercase;
+}
+
+#navigation span a {
+  display: inline-block;
+  height: 100%;
+  padding: 5px 10px;
 }

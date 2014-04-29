@@ -1,6 +1,6 @@
-<nav>
-  <%=link_to "Home", root_url %>
+<nav id="navigation" class="column">
+  <span><%=link_to "Home", root_url %></span>
   <% if user_signed_in? %>
-    <%=link_to " | Post New Ride", new_url %>
+  <span><%=link_to " Post New Ride", new_url %></span>
   <% end %>
 </nav>
