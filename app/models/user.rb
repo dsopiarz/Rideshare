@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   def self.search(params)
     if params[:email].present?
 	  where("email LIKE '%#{params[:email]}%'")
+	else
+	  all
 	end
   end
 end
