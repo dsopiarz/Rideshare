@@ -45,17 +45,19 @@
 
 
 <script>
-/*
-
-
-*/
 $(function() {
-  
-  //$("#arrivedatepicker").datepicker();
-  $("#datetimepicker").datetimepicker();
+  $("#datetimepicker").datetimepicker({
+  	hours12: false,
+format: 'Y-z H:i W',
+step: 1,
+opened: false,
+validateOnBlur: false,
+closeOnDateSelect: false,
+closeOnTimeSelect: false 
+  });
   $("#datetimepicker2").datetimepicker();
-  //$('#datetimepicker').datetimepicker()
-//	.datetimepicker({value:'2015/04/15 05:03',step:10});
+
+  //format{c} -- this should possibly fix things.
 });
 </script>
 
