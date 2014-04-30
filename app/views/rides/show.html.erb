@@ -1,56 +1,58 @@
-<p id="notice"><%= notice %></p>
+<section id="show-ride" class="medium-5 large-4 column">
+  <p id="notice"><%= notice %></p>
 
-<%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %>
+  <%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %>
 
-<p>
-  <strong>Departlocation:</strong>
-  <%= @ride.departlocation %>
-</p>
+  <p>
+    <strong>Departlocation:</strong>
+    <%= @ride.departlocation %>
+  </p>
 
-<p>
-  <strong>Arrivelocation:</strong>
-  <%= @ride.arrivelocation %>
-</p>
+  <p>
+    <strong>Arrivelocation:</strong>
+    <%= @ride.arrivelocation %>
+  </p>
 
-<p>
-  <strong>Departtime:</strong>
-  <%= @ride.departtime %>
-</p>
+  <p>
+    <strong>Departtime:</strong>
+    <%= @ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
+  </p>
 
-<p>
-  <strong>Arrivetime:</strong>
-  <%= @ride.arrivetime %>
-</p>
+  <p>
+    <strong>Arrivetime:</strong>
+    <%= @ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
+  </p>
 
-<p>
-  <strong>Seatsavailable:</strong>
-  <%= @ride.seatsavailable %>
-</p>
+  <p>
+    <strong>Seatsavailable:</strong>
+    <%= @ride.seatsavailable %>
+  </p>
 
-<p>
-  <strong>Costperseat:</strong>
-  <%= @ride.costperseat %>
-</p>
+  <p>
+    <strong>Costperseat:</strong>
+    <%= @ride.costperseat %>
+  </p>
 
-<p>
-  <strong>Smoking:</strong>
-  <%= @ride.smoking %>
-</p>
+  <p>
+    <strong>Smoking:</strong>
+    <%= @ride.checked(@ride.smoking) %>
+  </p>
 
-<p>
-  <strong>Children:</strong>
-  <%= @ride.children %>
-</p>
+  <p>
+    <strong>Children:</strong>
+    <%= @ride.checked(@ride.children) %>
+  </p>
 
-<p>
-  <strong>Preferences:</strong>
-  <%= @ride.preferences %>
-</p>
+  <p>
+    <strong>Preferences:</strong>
+    <%= @ride.preferences %>
+  </p>
 
-<p>
-  <strong>Link to this Ride?</strong>
-   <a href="<%= "http://#{request.host}:#{request.port.to_s+request.fullpath}" %>">Click Here</a>
-</p>
+  <p>
+    <strong>Link to this Ride?</strong>
+     <a href="<%= "http://#{request.host}:#{request.port.to_s+request.fullpath}" %>">Click Here</a>
+  </p>
 
-<%= link_to 'Edit', edit_ride_path(@ride) %> |
-<%= link_to 'Back', rides_path %>
+  <%= link_to 'Edit', edit_ride_path(@ride) %> |
+  <%= link_to 'Back', rides_path %>
+</section>

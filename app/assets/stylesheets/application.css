@@ -83,7 +83,15 @@ header.row {
 /***********
   BODY
 ***********/
+#show-ride p {
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+}
 
+#show-ride img {
+  margin-bottom: 20px;
+}
 
 /***********
   FOOTER
