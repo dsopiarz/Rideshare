@@ -26,6 +26,7 @@
   <div class="field datetimepicker2">
     <%= f.label :arrivetime %><br>
     <%= f.text_field :arrivetime, :id=>"datetimepicker2" %>
+    
   </div>
   <div class="field">
     <%= f.label :seatsavailable %><br>
@@ -47,15 +48,11 @@
 <script>
 $(function() {
   $("#datetimepicker").datetimepicker({
-  	hours12: false,
-format: 'Y-z H:i W',
-step: 1,
-opened: false,
-validateOnBlur: false,
-closeOnDateSelect: false,
-closeOnTimeSelect: false 
+    format: "Y-m-d H:i "
   });
-  $("#datetimepicker2").datetimepicker();
+  $("#datetimepicker2").datetimepicker({
+    format: "Y-m-d H:i "
+  });
 
   //format{c} -- this should possibly fix things.
 });
