@@ -1,26 +1,27 @@
-<%= render 'user_search_form' %>
-<br/><br/>
-<h2>User Matching Your Search</h2>
-<br/>
-<table>
-  <thead>
-    <tr>
-      <th>User's Email</th>
-      <th>Admin</th>
-	  <th>Disabled</th>
-	  <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<section class="medium-5 large-4 column">
+  <%= render 'user_search_form' %>
+  <br/><br/>
+  <h2>User Matching Your Search</h2>
+  <br/>
+  <table>
+    <thead>
       <tr>
-        <td><%= user.email %></td>
-		<td><%= user.checked(user.admin) %></td>
-		<td><%= user.checked(user.disabled) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+        <th>User's Email</th>
+        <th>Admin</th>
+  	  <th>Disabled</th>
+  	  <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-    
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+  		<td><%= user.checked(user.admin) %></td>
+  		<td><%= user.checked(user.disabled) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
