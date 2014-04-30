@@ -11,25 +11,6 @@
     </div>
   <% end %>
 
-<script>
-
-	$(function() {
-  
-  $("#arrivedatepicker").datepicker();
-  //$("#datetimepicker").datetimepicker();
-  jQuery('#datetimepicker').datetimepicker()
-	.datetimepicker({value:'2015/04/15 05:03',step:10});
-});
-/*
-
-
-
-$('#datetimepicker_mask').datetimepicker({
-	mask:'9999/19/39 29:59'
-});
-
-*/
-</script>
   <div class="field">
     <%= f.label :departlocation %><br>
     <%= f.text_field :departlocation %>
@@ -42,9 +23,9 @@ $('#datetimepicker_mask').datetimepicker({
    <%= f.label :departtime %><br>
    <%= f.text_field :departtime, :id=>"datetimepicker" %>
   </div>
-  <div class="field">
+  <div class="field datetimepicker2">
     <%= f.label :arrivetime %><br>
-    <%= f.text_field :arrivetime, :id=>"arrivedatepicker" %>
+    <%= f.text_field :arrivetime, :id=>"datetimepicker2" %>
   </div>
   <div class="field">
     <%= f.label :seatsavailable %><br>
@@ -61,5 +42,21 @@ $('#datetimepicker_mask').datetimepicker({
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+<script>
+/*
+
+
+*/
+$(function() {
+  
+  //$("#arrivedatepicker").datepicker();
+  $("#datetimepicker").datetimepicker();
+  $("#datetimepicker2").datetimepicker();
+  //$('#datetimepicker').datetimepicker()
+//	.datetimepicker({value:'2015/04/15 05:03',step:10});
+});
+</script>
 
 <% end %>
