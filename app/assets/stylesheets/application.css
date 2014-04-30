@@ -17,8 +17,9 @@
 ***********/
 
 * {
-    font-family:  Calibri, 'Times New Roman', serif;
-    font-weight: 400;
+  background: rgba(0,0,0,0.05);
+  font-family:  Calibri, 'Times New Roman', serif;
+  font-weight: 400;
 }
 
 .wrapper {
