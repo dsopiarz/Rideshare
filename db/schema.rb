@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430044157) do
+ActiveRecord::Schema.define(version: 20140430092708) do
 
   create_table "rides", force: true do |t|
     t.string   "departlocation"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20140430044157) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.boolean  "active"
+    t.string   "default="
+    t.boolean  "disabled"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
