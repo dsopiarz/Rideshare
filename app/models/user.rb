@@ -6,4 +6,13 @@ class User < ActiveRecord::Base
 
   validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@student\.cvtc\.edu\z/,
 			      message: "must be a CVTC student email account" }
+
+   def self.search(params)
+    if params[:email].present?
+	  where("email LIKE '%#{params[:email]}%'")
+	else
+	  all
+	end
+  end
+
 end
