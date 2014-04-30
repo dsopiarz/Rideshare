@@ -6,7 +6,7 @@ class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def results
-    if current_user.disabled?
+    if current_user.try(:admin?)
 	  redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
 	else
       @rides = Ride.search(params)
