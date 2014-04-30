@@ -4,7 +4,11 @@ class UsersController < ApplicationController
    
   #get users
   def users_results
-    @users = User.search(params)
+    if current_user.admin?
+      @users = User.search(params)
+	else
+	redirect_to root_url, :notice => "Sorry, you must be an administrator to access that!"
+	end
   end
   
   # DELETE /users/1
