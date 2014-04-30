@@ -17,18 +17,10 @@ class User < ActiveRecord::Base
   
   def checked(params)
     if params
-      'Active'
+      'YES'
     else
-      'Disabled'
+      'NO'
     end
-  end
-  
-  def status(params)
-    if params
-	  'Disabled'
-	else
-	  'Active'
-	end
   end
 
 end
