@@ -1,0 +1,13 @@
+<div class="frmSearch">
+  <h1>Search for a User</h1>
+
+  <%= form_tag users_results_path, :method => "get" do %>
+    <div>
+      <%= label_tag(:emails, "User's email:") %>
+      <%= text_field_tag(:email, params[:email]) %>
+    </div><br>
+    <div>
+      <%= submit_tag("Search", :name => nil) %>
+    </div>
+  <% end %>
+</div>
