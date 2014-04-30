@@ -14,5 +14,13 @@ class User < ActiveRecord::Base
 	  all
 	end
   end
+  
+  def checked(params)
+    if params
+      'Active'
+    else
+      'Disabled'
+    end
+  end
 
 end

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>User's Email</th>
-      <th></th>
+      <th>admin</th>
 	  <th></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-		<td><%= user.active %></td>
+		<td><%= user.checked(user.admin) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
       </tr>
     <% end %>
