@@ -7,26 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="container">
+    <header class="row">
+      <section class="user-info">
+        <span>
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <% end %>
+        </span>
+      </section>
+      
+      <p class="notice"><%= notice %></p> 
+      <p class="alert"><%= alert %></p>
 
-    <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+      <%= render 'layouts/nav' %>      
+    </header><!-- /header -->
 
-    <%= render 'layouts/nav' %>
-
-    <br/><br/>
-
-    <%= yield %>
+    <div class="row">
+      <%= yield %>
+    </div>
 
   </div>
-  <p class="notice"><%= notice %></p> 
-  <p class="alert"><%= alert %></p>
 </body>
 </html>

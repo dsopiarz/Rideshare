@@ -1,47 +1,47 @@
 <%= render 'search' %>
-<br/><br/>
-<h2>Rides Matching Your Search</h2>
-<br/>
-<table>
-  <thead>
-    <tr>
-      <% if user_signed_in? %>
-        <th>Picture of Driver</th>
-      <% end %>
-        <th>Departure Location</th>
-        <th>Arrival Location</th>
-        <th>Departure Time</th>
-        <th>Arrival Time</th>
-      <% if user_signed_in? %>
-        <th>Seats Available</th>
-        <th>Cost per Seat</th>
-        <th>Smoking</th>
-        <th>Children</th>
-        <th>Preferences</th>
-        <th></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rides.each do |ride| %>
+<section class="column">
+  <h3>Rides Matching Your Search</h3>
+  <table>
+    <thead>
       <tr>
         <% if user_signed_in? %>
-          <td><%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %></td>
+          <th>Picture of Driver</th>
         <% end %>
-          <td><%= ride.departlocation %></td>
-          <td><%= ride.arrivelocation %></td>
-          <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
-          <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+          <th>From:</th>
+          <th>To:</th>
+          <th>Departs</th>
+          <th>Arrives</th>
         <% if user_signed_in? %>
-          <td><%= ride.seatsavailable %></td>
-          <td><%= ride.costperseat %></td>
-          <td><%= ride.checked(ride.smoking) %></td>
-          <td><%= ride.checked(ride.children) %></td>
-          <td><%= ride.preferences %></td>
-          <td><%= link_to 'Show', ride %></td>
+          <th>Seats</th>
+          <th>Cost per Seat</th>
+          <th>Smoking</th>
+          <th>Children</th>
+          <th>Preferences</th>
+          <th></th>
         <% end %>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @rides.each do |ride| %>
+        <tr>
+          <% if user_signed_in? %>
+            <td><%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %></td>
+          <% end %>
+            <td><%= ride.departlocation %></td>
+            <td><%= ride.arrivelocation %></td>
+            <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+            <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
+          <% if user_signed_in? %>
+            <td><%= ride.seatsavailable %></td>
+            <td><%= ride.costperseat %></td>
+            <td><%= ride.checked(ride.smoking) %></td>
+            <td><%= ride.checked(ride.children) %></td>
+            <td><%= ride.preferences %></td>
+            <td><%= link_to 'Show', ride %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

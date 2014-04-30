@@ -2,7 +2,6 @@
   <% if @ride.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ride.errors.count, "error") %> prohibited this ride from being saved:</h2>
-
       <ul>
       <% @ride.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,42 +10,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :departlocation %><br>
+    <%= f.label :departlocation %>
     <%= f.text_field :departlocation %>
-  </div>
-  <div class="field">
-    <%= f.label :arrivelocation %><br>
+
+    <%= f.label :arrivelocation %>
     <%= f.text_field :arrivelocation %>
-  </div>
-  <div class="field">
-    <%= f.label :departtime %><br>
+
+    <%= f.label :departtime %>
     <%= f.datetime_select :departtime %>
-  </div>
-  <div class="field">
-    <%= f.label :arrivetime %><br>
+
+    <%= f.label :arrivetime %>
     <%= f.datetime_select :arrivetime %>
-  </div>
-  <div class="field">
-    <%= f.label :seatsavailable %><br>
+
+    <%= f.label :seatsavailable %>
     <%= f.number_field :seatsavailable %>
-  </div>
-  <div class="field">
-    <%= f.label :costperseat %><br>
+
+    <%= f.label :costperseat %>
     <%= f.text_field :costperseat %>
-  </div>
-  <div class="field">
+
     <%= f.label :smoking %>
     <%= f.check_box :smoking %>
-  </div>
-  <div class="field">
+
     <%= f.label :children %>
     <%= f.check_box :children %>
-  </div>
-  <div class="field">
-    <%= f.label :preferences %><br>
+
+    <%= f.label :preferences %>
     <%= f.text_area :preferences %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

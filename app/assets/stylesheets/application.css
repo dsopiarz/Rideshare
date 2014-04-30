@@ -12,11 +12,79 @@
  *= require_tree .
  */
 
-.wrapper {
-	max-width: 1024px;
-  margin: 0 auto;
+/***********
+  GENERAL
+***********/
+
+* {
+    font-family:  Calibri, 'Times New Roman', serif;
+    font-weight: 400;
 }
 
-.frmSearch {
-  max-width: 250px;
+.wrapper {
+  margin: 0 auto;
+  max-width: 1024px;
 }
+
+form label {
+    padding: 4px 8px;
+}
+
+input[type="submit"] {
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  width: 100px;
+}
+
+.field_with_errors > label {
+    background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+}
+
+.field_with_errors {
+  background: #fff !important;
+}
+
+.cancel_button {
+  width: 200px !important;
+}
+
+/***********
+  HEADER
+***********/
+header.row {
+  margin-bottom: 20px;
+}
+
+#navigation {
+  background-color: rgba(0,0,0,0.25);
+  font-size: 18px;
+  line-height: 40px;
+  min-height: 40px;
+}
+
+#navigation span {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+#navigation span a {
+  display: inline-block;
+  height: 100%;
+  padding: 0px 10px;
+}
+
+.user-info {
+  padding: 5px 0;
+  border-bottom: 1px solid #666;
+}
+
+/***********
+  BODY
+***********/
+
+
+/***********
+  FOOTER
+***********/
