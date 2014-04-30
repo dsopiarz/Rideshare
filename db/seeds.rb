@@ -13,4 +13,4 @@ Ride.create(departlocation: 'Menomonie', arrivelocation: 'Green Bay', departtime
 Ride.create(departlocation: 'Hudson', arrivelocation: 'Eau Claire', departtime: DateTime.new(2014,8,1,4), arrivetime: DateTime.new(2014,8,1,5), seatsavailable: '1', costperseat: '10', preferences: 'Smoking, Food is OK', smoking: false, children: false)
 User.create(email: 'admin@student.cvtc.edu', password: 'adminpass', admin: true)
 User.create(email: 'user@student.cvtc.edu', password: 'userpass')
-User.create(email: 'deactivated@student.cvtc.edu', password: 'deactived')
+User.create(email: 'deactivated@student.cvtc.edu', password: 'deactived', disabled: true)
