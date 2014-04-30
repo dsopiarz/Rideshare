@@ -6,7 +6,11 @@ class RidesController < ApplicationController
   # GET /rides
   # GET /rides.json
   def results
-    @rides = Ride.search(params)
+    if current_user.disabled?
+	  redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
+	else
+      @rides = Ride.search(params)
+	end
   end
 
   # GET /rides/1
@@ -26,16 +30,20 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
-    @ride = Ride.new(ride_params)
+    if current_user.disabled?
+	  redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
+	else
+      @ride = Ride.new(ride_params)
 
-    respond_to do |format|
-      if @ride.save
-        format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ride }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @ride.errors, status: :unprocessable_entity }
-      end
+      respond_to do |format|
+        if @ride.save
+          format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @ride }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @ride.errors, status: :unprocessable_entity }
+        end
+	  end
     end
   end
 
