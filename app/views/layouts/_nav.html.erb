@@ -1,7 +1,11 @@
 <nav id="navigation" class="column">
   <span><%=link_to "Home", root_url %>
   <% if user_signed_in? %>
-  <%=link_to " | Post New Ride", new_url %>
-  <%=link_to " | Search for user", user_search_url %>
+  <span> | </span>
+  <%=link_to "Post New Ride", new_url %>
+  <% if current_user.admin? %>
+  <span> | </span>
+  <%=link_to "Search for user", user_search_url %>
+  <% end %>
   <% end %>
 </nav>

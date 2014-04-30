@@ -2,15 +2,14 @@ class RidesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index, :results]
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
 
-
   # GET /rides
   # GET /rides.json
   def results
-    if current_user.try(:admin?)
-	  redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
-	else
+    if current_user.disabled?
+  	  redirect_to root_url, :notice => "Sorry, your account has been disabled. Please contact am Administrator at admin@Rideshare.com"
+  	else
       @rides = Ride.search(params)
-	end
+  	end
   end
 
   # GET /rides/1
