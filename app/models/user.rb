@@ -22,5 +22,13 @@ class User < ActiveRecord::Base
       'Disabled'
     end
   end
+  
+  def status(params)
+    if params
+	  'Disabled'
+	else
+	  'Active'
+	end
+  end
 
 end
