@@ -6,6 +6,8 @@
   <div><%=f.label "User Photo"%><br />
   <%= image_tag(resource.img_src, :alt => "User Photo") %></div>
 
+  <div><p>Don't have gravatar? go to <a href="https://www.gravatar.com">www.gravatar.com</a> to create an account and link your photo in</p></div>
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
