@@ -16,13 +16,16 @@
     <%= f.label :arrivelocation %>
     <%= f.text_field :arrivelocation %>
 
-    <%= f.label :departtime %>
-    <%= f.datetime_select :departtime %>
+  <div class="field datetimepicker">
+   <%= f.label :departtime %><br>
+   <%= f.text_field :departtime, :id=>"datetimepicker" %>
+  </div>
 
-    <%= f.label :arrivetime %>
-    <%= f.datetime_select :arrivetime %>
+  <div class="field datetimepicker2">
+    <%= f.label :arrivetime %><br>
+    <%= f.text_field :arrivetime, :id=>"datetimepicker2" %>
+  </div>
 
-    <%= f.label :seatsavailable %>
     <%= f.number_field :seatsavailable %>
 
     <%= f.label :costperseat %>
@@ -39,4 +42,16 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+<script>
+  $(function() {
+    $("#datetimepicker").datetimepicker({
+      format: "Y-m-d H:i "
+    });
+    $("#datetimepicker2").datetimepicker({
+      format: "Y-m-d H:i "
+    });
+  });
+</script>
+
 <% end %>
