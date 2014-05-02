@@ -8,6 +8,8 @@ class RidesController < ApplicationController
     if user_signed_in?
       if current_user.disabled?
         redirect_to root_url, :notice => "Sorry, your account has been disabled. Please contact am Administrator at admin@Rideshare.com"
+      else
+        @rides = Ride.search(params)
       end
     else
       @rides = Ride.search(params)
@@ -32,8 +34,8 @@ class RidesController < ApplicationController
   # POST /rides.json
   def create
     if current_user.disabled?
-    redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
-  else
+      redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
+    else
       @ride = Ride.new(ride_params)
 
       respond_to do |format|
@@ -44,7 +46,7 @@ class RidesController < ApplicationController
           format.html { render action: 'new' }
           format.json { render json: @ride.errors, status: :unprocessable_entity }
         end
-    end
+      end
     end
   end
 
