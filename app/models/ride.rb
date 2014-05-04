@@ -1,6 +1,10 @@
 class Ride < ActiveRecord::Base
   validates_presence_of :departlocation, :arrivelocation, :departtime, :arrivetime, :seatsavailable, :costperseat
 
+  def set_photo(user)
+    self.userphoto = user.img_src
+  end
+
   def checked(params)
     if params
       'Acceptable'

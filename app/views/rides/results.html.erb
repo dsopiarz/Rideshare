@@ -26,7 +26,7 @@
       <% @rides.each do |ride| %>
         <tr>
           <% if user_signed_in? %>
-            <td><%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %></td>
+            <td><%= image_tag(ride.userphoto, :alt => "Picture of Driver") %></td>
           <% end %>
             <td><%= ride.departlocation %></td>
             <td><%= ride.arrivelocation %></td>

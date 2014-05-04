@@ -5,14 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@student\.cvtc\.edu\z/,
-			      message: "must be a CVTC student email account" }
+            message: "must be a CVTC student email account" }
 
-   def self.search(params)
+  def self.search(params)
     if params[:email].present?
-	  where("email LIKE '%#{params[:email]}%'")
-	else
-	  all
-	end
+      where("email LIKE '%#{params[:email]}%'")
+    else
+      all
+    end
   end
   
   def checked(params)
@@ -23,4 +23,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  def img_src
+    email_address = self.email.downcase.to_s.strip
+    hash = Digest::MD5.hexdigest(email_address.downcase.strip)
+    "http://www.gravatar.com/avatar/#{hash}"
+  end
 end

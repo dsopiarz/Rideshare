@@ -37,6 +37,8 @@ class RidesController < ApplicationController
       redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact am Administrator at admin@Rideshare.com"
     else
       @ride = Ride.new(ride_params)
+    
+      @ride.set_photo(current_user)
 
       respond_to do |format|
         if @ride.save
@@ -53,6 +55,8 @@ class RidesController < ApplicationController
   # PATCH/PUT /rides/1
   # PATCH/PUT /rides/1.json
   def update
+    @ride.set_photo(current_user)
+
     respond_to do |format|
       if @ride.update(ride_params)
         format.html { redirect_to @ride, notice: 'Ride was successfully updated.' }
@@ -82,6 +86,6 @@ class RidesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ride_params
-      params.require(:ride).permit(:departlocation, :arrivelocation, :departtime, :arrivetime, :seatsavailable, :costperseat, :smoking, :children, :preferences, :user_id)
+      params.require(:ride).permit(:departlocation, :arrivelocation, :departtime, :arrivetime, :seatsavailable, :costperseat, :smoking, :children, :preferences, :user_id, :userphoto)
     end
 end

@@ -1,7 +1,7 @@
 <section id="show-ride" class="medium-5 large-4 column">
   <p id="notice"><%= notice %></p>
 
-  <%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %>
+  <%= image_tag(@ride.userphoto, :alt => "Picture of Driver") %>
 
   <p>
     <strong>Departlocation:</strong>
@@ -15,12 +15,12 @@
 
   <p>
     <strong>Departtime:</strong>
-    <%= @ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
+    <%= @ride.departtime %>
   </p>
 
   <p>
     <strong>Arrivetime:</strong>
-    <%= @ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
+    <%= @ride.arrivetime %>
   </p>
 
   <p>
@@ -35,12 +35,12 @@
 
   <p>
     <strong>Smoking:</strong>
-    <%= @ride.checked(@ride.smoking) %>
+    <%= @ride.smoking %>
   </p>
 
   <p>
     <strong>Children:</strong>
-    <%= @ride.checked(@ride.children) %>
+    <%= @ride.children %>
   </p>
 
   <p>

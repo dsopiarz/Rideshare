@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430131627) do
+ActiveRecord::Schema.define(version: 20140502003203) do
 
   create_table "rides", force: true do |t|
     t.string   "departlocation"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140430131627) do
     t.integer  "user_id"
     t.boolean  "smoking"
     t.boolean  "children"
+    t.string   "userphoto"
   end
 
   add_index "rides", ["user_id"], name: "index_rides_on_user_id"
