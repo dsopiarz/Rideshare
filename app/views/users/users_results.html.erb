@@ -7,9 +7,9 @@
     <thead>
       <tr>
         <th>User's Email</th>
-        <th>Admin</th>
-  	  <th>Disabled</th>
-  	  <th></th>
+        <th>Admin Status</th>
+  	    <th>Account Status</th>
+  	    <th></th>
       </tr>
     </thead>
 
@@ -17,8 +17,8 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.email %></td>
-  		<td><%= user.checked(user.admin) %></td>
-  		<td><%= user.checked(user.disabled) %></td>
+  		  <td><%= user.checked(user.admin) %></td>
+  		  <td><%= user.check(user.disabled) %></td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
         </tr>
       <% end %>
