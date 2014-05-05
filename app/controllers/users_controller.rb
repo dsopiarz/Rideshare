@@ -20,6 +20,20 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def disableAccount
+    @user.disableAccount
+    respond_to do |format|
+      format.html { redirect_to users_results_url }
+    end
+  end
+  
+  def activateAccount
+    @user.activateAccount
+    respond_to do |format|
+      format.html { redirect_to users_results_url }
+    end
+  end
    
   private
     # Use callbacks to share common setup or constraints between actions.
