@@ -10,6 +10,8 @@
         <th>Admin Status</th>
   	    <th>Account Status</th>
   	    <th></th>
+		<th></th>
+		<th></th>
       </tr>
     </thead>
 
@@ -19,7 +21,9 @@
           <td><%= user.email %></td>
   		  <td><%= user.checked(user.admin) %></td>
   		  <td><%= user.check(user.disabled) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+		  <td><%= link_to 'Disable Account', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+		  <td><%= link_to 'Activate Account', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+          <td><%= link_to 'Remove Account', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
         </tr>
       <% end %>
     </tbody>
