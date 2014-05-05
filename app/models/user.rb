@@ -30,6 +30,16 @@ class User < ActiveRecord::Base
       'Active'
     end
   end
+  
+  def disableAccount
+    @user.disabled = true
+	save
+  end
+  
+  def activateAccount
+    @user.disabled = false
+	save
+  end
 
   def img_src
     email_address = self.email.downcase.to_s.strip
