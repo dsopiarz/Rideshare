@@ -20,6 +20,22 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def update
+    @user = User.find(params[:id])
+      @user.disableAccount
+    respond_to do |format|
+      format.html { redirect_to user_search_url , :notice => "Selected account was disabled"}
+    end
+  end
+  
+  def show
+    @user = User.find(params[:id])
+    @user.activateAccount
+    respond_to do |format|
+      format.html { redirect_to user_search_url, :notice => "Selected account was activated" }
+    end
+  end
    
   private
     # Use callbacks to share common setup or constraints between actions.

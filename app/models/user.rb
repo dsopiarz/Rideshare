@@ -17,10 +17,28 @@ class User < ActiveRecord::Base
   
   def checked(params)
     if params
-      'YES'
+      'Active'
     else
-      'NO'
+      'Disabled'
     end
+  end
+  
+  def check(params)
+    if params
+      'Disabled'
+    else
+      'Active'
+    end
+  end
+  
+  def disableAccount
+    self.disabled = true
+    save
+  end
+  
+  def activateAccount
+    self.disabled = false
+    save
   end
 
   def img_src
