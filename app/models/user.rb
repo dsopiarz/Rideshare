@@ -32,13 +32,13 @@ class User < ActiveRecord::Base
   end
   
   def disableAccount
-    @user.disabled = true
-	save
+    self.disabled = true
+    save
   end
   
   def activateAccount
-    @user.disabled = false
-	save
+    self.disabled = false
+    save
   end
 
   def img_src

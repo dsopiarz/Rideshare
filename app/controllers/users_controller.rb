@@ -21,17 +21,19 @@ class UsersController < ApplicationController
     end
   end
   
-  def disableAccount
-    @user.disableAccount
+  def update
+    @user = User.find(params[:id])
+      @user.disableAccount
     respond_to do |format|
-      format.html { redirect_to users_results_url }
+      format.html { redirect_to user_search_url , :notice => "Selected account was disabled"}
     end
   end
   
-  def activateAccount
+  def show
+    @user = User.find(params[:id])
     @user.activateAccount
     respond_to do |format|
-      format.html { redirect_to users_results_url }
+      format.html { redirect_to user_search_url, :notice => "Selected account was activated" }
     end
   end
    
