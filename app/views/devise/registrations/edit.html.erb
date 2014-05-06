@@ -5,7 +5,11 @@
     <%= devise_error_messages! %>
 
     <div><%=f.label "User Photo"%><br />
-    <%= image_tag(resource.img_src, :alt => "User Photo") %></div>
+    <% if resource.img_src.empty? %>
+    <%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %>
+    <% else %>
+    <%= image_tag(resource.img_src, :alt => "Picture of Driver") %>
+    <% end %>
 
     <div><p>Don't have gravatar?  Go to <a href="https://www.gravatar.com">www.gravatar.com</a> to create an account and link your photo in!</p></div>
 
