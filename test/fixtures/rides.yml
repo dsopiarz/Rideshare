@@ -8,6 +8,12 @@ one:
   seatsavailable: 1
   costperseat: 9.99
   preferences: MyText
+  created_at: MyString
+  updated_at: MyString
+  user_id: 1
+  smoking: false
+  children: false
+  userphoto: MyString
 
 two:
   departlocation: MyString
@@ -17,3 +23,9 @@ two:
   seatsavailable: 1
   costperseat: 9.99
   preferences: MyText
+  created_at: MyString
+  updated_at: MyString
+  user_id: 2
+  smoking: false
+  children: false
+  userphoto: MyString
