@@ -32,12 +32,12 @@ class User < ActiveRecord::Base
   end
   
   def disableAccount
-    @user.disabled = true
+      self.disabled = true
 	save
   end
   
   def activateAccount
-    @user.disabled = false
+    self.disabled = false
 	save
   end
 
