@@ -33,7 +33,7 @@
             <td><%= ride.arrivelocation %></td>
             <td><%= ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
             <td><%= ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %></td>
-            <td><%= link_to 'Join', "new" %></td>
+            <td><%= link_to 'Join', "/users/sign_up" %></td>
           <% if user_signed_in? %>
             <td><%= ride.seatsavailable %></td>
             <td><%= ride.costperseat %></td>
