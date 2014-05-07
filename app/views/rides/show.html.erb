@@ -8,32 +8,32 @@
   <% end %>
 
   <p>
-    <strong>Departlocation:</strong>
+    <strong>Depart Location:</strong>
     <%= @ride.departlocation %>
   </p>
 
   <p>
-    <strong>Arrivelocation:</strong>
+    <strong>Arrive Location:</strong>
     <%= @ride.arrivelocation %>
   </p>
 
   <p>
-    <strong>Departtime:</strong>
+    <strong>Depart Time:</strong>
     <%= @ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
   </p>
 
   <p>
-    <strong>Arrivetime:</strong>
+    <strong>Arrive Time:</strong>
     <%= @ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
   </p>
 
   <p>
-    <strong>Seatsavailable:</strong>
+    <strong>Seats Available:</strong>
     <%= @ride.seatsavailable %>
   </p>
 
   <p>
-    <strong>Costperseat:</strong>
+    <strong>Cost Per Seat:</strong>
     <%= number_to_currency(@ride.costperseat) %>
   </p>
 
