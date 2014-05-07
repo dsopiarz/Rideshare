@@ -96,6 +96,10 @@ header.row {
   margin-bottom: 20px;
 }
 
+table img {
+  max-width: 80px;
+}
+
 /***********
   FOOTER
 ***********/

@@ -1,7 +1,11 @@
 <section id="show-ride" class="medium-5 large-4 column">
   <p id="notice"><%= notice %></p>
 
+  <% if not @ride.userphoto.to_s.empty? %>
   <%= image_tag(@ride.userphoto, :alt => "Picture of Driver") %>
+  <% else %>
+  <%= image_tag("NoDriverPic.png", :alt => "Picture of Driver") %>
+  <% end %>
 
   <p>
     <strong>Departlocation:</strong>
@@ -30,7 +34,7 @@
 
   <p>
     <strong>Costperseat:</strong>
-    <%= @ride.costperseat %>
+    <%= number_to_currency(@ride.costperseat) %>
   </p>
 
   <p>
