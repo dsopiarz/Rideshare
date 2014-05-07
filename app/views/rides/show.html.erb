@@ -39,12 +39,12 @@
 
   <p>
     <strong>Smoking:</strong>
-    <%= @ride.smoking %>
+    <%= @ride.checked(@ride.smoking) %>
   </p>
 
   <p>
     <strong>Children:</strong>
-    <%= @ride.children %>
+    <%= @ride.checked(@ride.children) %>
   </p>
 
   <p>
