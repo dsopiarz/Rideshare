@@ -19,12 +19,12 @@
 
   <p>
     <strong>Departtime:</strong>
-    <%= @ride.departtime %>
+    <%= @ride.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
   </p>
 
   <p>
     <strong>Arrivetime:</strong>
-    <%= @ride.arrivetime %>
+    <%= @ride.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') %>
   </p>
 
   <p>

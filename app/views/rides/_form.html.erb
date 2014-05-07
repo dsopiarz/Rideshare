@@ -18,12 +18,12 @@
 
   <div class="field datetimepicker">
    <%= f.label :departtime %><br>
-   <%= f.text_field :departtime, :id=>"datetimepicker" %>
+   <%= f.text_field :departtime, :value => (f.object.departtime.to_time.strftime('%a, %b %d, %Y %l:%M%p') if f.object.departtime), :id=>"datetimepicker" %>
   </div>
 
   <div class="field datetimepicker2">
     <%= f.label :arrivetime %><br>
-    <%= f.text_field :arrivetime, :id=>"datetimepicker2" %>
+    <%= f.text_field :arrivetime, :value => (f.object.arrivetime.to_time.strftime('%a, %b %d, %Y %l:%M%p') if f.object.arrivetime), :id=>"datetimepicker2" %>
   </div>
 
     <%= f.label :seatsavailable %>
