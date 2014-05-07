@@ -23,7 +23,11 @@ class RidesController < ApplicationController
 
   # GET /rides/new
   def new
-    @ride = Ride.new
+    if current_user.disabled?
+	  redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact an Administrator at admin@Rideshare.com"
+	else
+      @ride = Ride.new
+	end
   end
 
   # GET /rides/1/edit
@@ -33,21 +37,17 @@ class RidesController < ApplicationController
   # POST /rides
   # POST /rides.json
   def create
-    if current_user.disabled?
-      redirect_to root_url, :notice => "Sorry, your account has bee disabled. Please contact an Administrator at admin@Rideshare.com"
-    else
-      @ride = Ride.new(ride_params)
+    @ride = Ride.new(ride_params)
     
-      @ride.set_photo(current_user)
+    @ride.set_photo(current_user)
 
-      respond_to do |format|
-        if @ride.save
-          format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
-          format.json { render action: 'show', status: :created, location: @ride }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @ride.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @ride.save
+        format.html { redirect_to @ride, notice: 'Ride was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @ride }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @ride.errors, status: :unprocessable_entity }
       end
     end
   end
