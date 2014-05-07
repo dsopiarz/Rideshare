@@ -15,6 +15,8 @@
 //= require jquery.ui.all
 //= require jquery.datetimepicker.js
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 

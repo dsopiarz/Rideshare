@@ -100,6 +100,22 @@ table img {
   max-width: 80px;
 }
 
+.gm-style img { max-width: none; }
+.gm-style label { width: auto; display: inline; }
+
+#map-canvas *, #map-canvas *:before, #map-canvas *:after {
+        -moz-box-sizing: content-box!important;
+        -webkit-box-sizing: content-box!important;
+        box-sizing: content-box!important;  
+    }
+    #map-canvas img {
+        max-width: none;
+    }
+    #map-canvas label {
+        width: auto;
+        display: inline;
+    }
+
 /***********
   FOOTER
 ***********/

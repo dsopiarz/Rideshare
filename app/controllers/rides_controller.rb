@@ -10,6 +10,10 @@ class RidesController < ApplicationController
         redirect_to root_url, :notice => "Sorry, your account has been disabled. Please contact an Administrator at admin@Rideshare.com"
       else
         @rides = Ride.search(params)
+        @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  marker.lat user.latitude
+  marker.lng user.longitude
+end
       end
     else
       @rides = Ride.search(params)

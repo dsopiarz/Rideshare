@@ -67,3 +67,6 @@ div {
     list-style: square;
   }
 }
+
+#mapCanvas label { width: auto; display:inline; }
+#mapCanvas img { max-width: none; }

@@ -51,3 +51,5 @@ end
 gem 'jquery-ui-rails'
 
 gem 'jquery-timepicker-rails'
+
+gem 'gmaps4rails'
