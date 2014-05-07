@@ -22,8 +22,8 @@
           <td><%= user.checked(user.admin) %></td>
           <td><%= user.check(user.disabled) %></td>
           <% if !user.admin? %>
-          <td><%= link_to 'Disable Account', user, method: :put, data: { confirm: 'Are you sure, you want to disable this account?' }  %></td>
-          <td><%= link_to 'Activate Account', user, method: :get, data: { confirm: 'Are you sure, you want to activate this account?' }  %></td>
+          <td><%= link_to 'Disable Account', disable_user_path(user), method: :put, data: { confirm: 'Are you sure, you want to disable this account?' }  %></td>
+          <td><%= link_to 'Activate Account', activate_user_path(user), method: :put, data: { confirm: 'Are you sure, you want to activate this account?' }  %></td>
           <td><%= link_to 'Remove Account', user, method: :delete, data: { confirm: 'Are you sure, you want to delete this account?' }  %></td>
           <% else %>
             <td></td>

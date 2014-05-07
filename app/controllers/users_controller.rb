@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def update
+  def disable
     @user = User.find(params[:id])
       @user.disableAccount
     respond_to do |format|
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
+  def activate
     @user = User.find(params[:id])
     @user.activateAccount
     respond_to do |format|
