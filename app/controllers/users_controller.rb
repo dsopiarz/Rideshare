@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to user_search_url }
+      format.html { redirect_to user_search_url, :notice => "Selected account was deleted" }
       format.json { head :no_content }
     end
   end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
       @user.disableAccount
     respond_to do |format|
-      format.html { redirect_to user_search_url , :notice => "Selected account was disabled"}
+      format.html { redirect_to user_search_url, :notice => "Selected account was disabled"}
     end
   end
   
